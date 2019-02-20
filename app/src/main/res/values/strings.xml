@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EWTest</string>
+    <string name="action_settings">Настройки</string>
+    <string name="choise_city">Выберите город</string>
+    <string name="choise_season">Выберите сезон</string>
+
+    <string name="winter">Зима</string>
+    <string name="spring">Весна</string>
+    <string name="summer">Лето</string>
+    <string name="autumn">Осень</string>
+</resources>
