@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.virex.ewtest.common.Celsium;
+import com.virex.ewtest.common.Fahrenheit;
+import com.virex.ewtest.common.Kelvin;
 import com.virex.ewtest.entity.City;
 
 import java.util.List;
@@ -24,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner_choise_city;
     Spinner choise_seasons;
     TextView tv_cityType;
-    TextView tv_AmountTemp;
+    TextView tv_AmountTempC;
+    TextView tv_AmountTempF;
+    TextView tv_AmountTempK;
 
     City currentCity;
 
@@ -37,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         spinner_choise_city = findViewById(R.id.choise_city);
         choise_seasons = findViewById(R.id.choise_seasons);
         tv_cityType=findViewById(R.id.tv_cityType);
-        tv_AmountTemp=findViewById(R.id.tv_AmountTemp);
+        tv_AmountTempC=findViewById(R.id.tv_AmountTempC);
+        tv_AmountTempF=findViewById(R.id.tv_AmountTempF);
+        tv_AmountTempK=findViewById(R.id.tv_AmountTempK);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
 
@@ -91,9 +97,22 @@ public class MainActivity extends AppCompatActivity {
     private void showInfo(){
         if (currentCity==null) return;
 
-        tv_cityType.setText(currentCity.type.toString());
+        String cityType="";
+        switch (currentCity.type){
+            case small:
+                cityType="Малый город";
+                break;
+            case middle:
+                cityType="Средний город";
+                break;
+            case big:
+                cityType="Большой город";
+                break;
+        }
+        tv_cityType.setText(cityType);
 
         double middleTemp=0;
+        String season=(String)choise_seasons.getSelectedItem();
         int pos = choise_seasons.getSelectedItemPosition();
         switch (pos){
             case 0:
@@ -113,7 +132,16 @@ public class MainActivity extends AppCompatActivity {
                 middleTemp=(currentCity.sepTemp+currentCity.octTemp+currentCity.decTemp)/3.0;
                 break;
         }
-        tv_AmountTemp.setText((new Celsium(middleTemp)).toString());
+        Celsium celsium = new Celsium(middleTemp);
+        Fahrenheit fahrenheit = new Fahrenheit(celsium);
+        Kelvin kelvin = new Kelvin(celsium);
+
+        tv_AmountTempC.setText(celsium.toString());
+        tv_AmountTempF.setText(fahrenheit.toString());
+        tv_AmountTempK.setText(kelvin.toString());
+
+        String message=String.format("Средняя температура за сезон (%s):\n%s,  %s,  %s",season, celsium.toString(), fahrenheit.toString(), kelvin.toString());
+        Snackbar.make(tv_AmountTempK, message, Snackbar.LENGTH_LONG).show();
     }
 
     /*

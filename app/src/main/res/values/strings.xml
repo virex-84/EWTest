@@ -8,4 +8,5 @@
     <string name="spring">Весна</string>
     <string name="summer">Лето</string>
     <string name="autumn">Осень</string>
+    <string name="amount_temp_in_season">Средняя температура в сезоне</string>
 </resources>

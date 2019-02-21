@@ -21,7 +21,6 @@ public class Kelvin implements ITemperature {
 
     @Override
     public String toString() {
-        //return String.valueOf(valueKelvin);
-        return String.format(Locale.ENGLISH, "%f K",valueKelvin);
+        return String.format(Locale.ENGLISH, "%.2f K",valueKelvin);
     }
 }

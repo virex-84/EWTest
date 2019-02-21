@@ -7,7 +7,7 @@ public class Fahrenheit implements ITemperature {
     private double valueKelvin;
 
     public Fahrenheit(double value){
-        this.valueKelvin=(value - 32) * 5/9 + kelvin;
+        this.valueKelvin=(value - 32) * 5/9.0 + kelvin;
     }
 
     public Fahrenheit(ITemperature temperature){
@@ -21,7 +21,6 @@ public class Fahrenheit implements ITemperature {
 
     @Override
     public String toString() {
-        //return String.valueOf((valueKelvin - kelvin) * 9/5 + 32);
-        return String.format(Locale.ENGLISH, "%.1f F",(valueKelvin - kelvin) * 9/5 + 32);
+        return String.format(Locale.ENGLISH, "%.2f F",(valueKelvin - kelvin) * 9/5 + 32);
     }
 }

@@ -40,6 +40,17 @@
             android:spinnerMode="dialog"
             />
 
+        <TextView
+            android:id="@+id/tv_cityType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8sp"
+            tools:text="tv_cityType" />
+
         <Spinner
             android:id="@+id/choise_seasons"
             android:layout_width="fill_parent"
@@ -49,35 +60,53 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:prompt="@string/choise_season"
             android:entries="@array/seasons_entries"
-            android:spinnerMode="dialog"
-            />
+            android:prompt="@string/choise_season"
+            android:spinnerMode="dialog" />
 
         <TextView
-            android:id="@+id/tv_cityType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="tv_cityType"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            />
-
+            android:paddingLeft="8sp"
+            android:text="@string/amount_temp_in_season" />
         <TextView
-            android:id="@+id/tv_AmountTemp"
+            android:id="@+id/tv_AmountTempC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="tv_AmountTemp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            />
-
+            android:paddingLeft="8sp"
+            tools:text="tv_AmountTempC" />
+        <TextView
+            android:id="@+id/tv_AmountTempF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8sp"
+            tools:text="tv_AmountTempF" />
+        <TextView
+            android:id="@+id/tv_AmountTempK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8sp"
+            tools:text="tv_AmountTempK" />
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
