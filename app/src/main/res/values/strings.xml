@@ -9,4 +9,28 @@
     <string name="summer">Лето</string>
     <string name="autumn">Осень</string>
     <string name="amount_temp_in_season">Средняя температура в сезоне</string>
+    <string name="delete_city_dialog_message">Вы действительно хотите удалить?</string>
+    <string name="action_ok">Ok</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="january">Январь</string>
+    <string name="enter_temperature">Введите температуру</string>
+    <string name="febrary">Февраль</string>
+    <string name="march">Март</string>
+    <string name="april">Апрель</string>
+    <string name="may">Май</string>
+    <string name="jun">Июнь</string>
+    <string name="july">Июль</string>
+    <string name="august">Август</string>
+    <string name="september">Сентябрь</string>
+    <string name="october">Октябрь</string>
+    <string name="november">Ноябрь</string>
+    <string name="december">Декабрь</string>
+    <string name="enter_city_name">Введите название города</string>
+    <string name="city_type">Тип города</string>
+
+    <string name="small">Малый город</string>
+    <string name="middle">Средний город</string>
+    <string name="big">Большой город</string>
+    <string name="text_is_empty">Необходимо заполнить!</string>
 </resources>

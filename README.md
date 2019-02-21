@@ -29,3 +29,41 @@
 БД: SQLite
 Мы ожидаем выполнения задания без применения сторонних библиотек (Кроме Android Support Library и Android Architecture Components)
 Результат выложить на Github.com
+
+
+Lazy singleton:
+com.virex.ewtest.repository.CityRepository
+database = AppDataBase.getInstance(context.getApplicationContext());
+
+Factory:
+com.virex.ewtest.ui.CitiesEditDialog
+city = (City) CityFactory.newCity("", ICity.CityType.middle);
+
+Decorator:
+com.virex.ewtest.MainActivity
+Celsium celsium = new Celsium(middleTemp);
+Fahrenheit fahrenheit = new Fahrenheit(celsium);
+Kelvin kelvin = new Kelvin(celsium);
+
+Observer:
+com.virex.ewtest.MainActivity
+model.getAllCites().observe(this, new Observer<List<City>>() {
+            @Override
+            public void onChanged(@Nullable List<City> cities) {
+                if (cities==null) return;
+                spinner_choise_city.setAdapter(new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_spinner_dropdown_item,cities));
+            }
+        });
+
+Strategy:
+com.virex.ewtest.common.CityFactory
+switch(type){
+            case small:
+                return new SmallCity(name);
+            case middle:
+                return new MiddleCity(name);
+            case big:
+                return new BigCity(name);
+            default:
+                return null;
+        }

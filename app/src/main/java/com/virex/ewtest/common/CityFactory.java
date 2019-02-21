@@ -1,7 +1,7 @@
 package com.virex.ewtest.common;
 
-class CityFactory {
-    static ICity newCity(String name, ICity.CityType type){
+public class CityFactory {
+    public static ICity newCity(String name, ICity.CityType type){
         switch(type){
             case small:
                 return new SmallCity(name);
