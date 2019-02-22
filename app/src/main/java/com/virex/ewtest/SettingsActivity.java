@@ -39,7 +39,7 @@ public class SettingsActivity extends AppCompatActivity implements CitiesEditDia
             @Override
             public void onEditClick(City city) {
                 CitiesEditDialog citiesEditDialog = new CitiesEditDialog(SettingsActivity.this,EDIT_CITY, city);
-                if (getFragmentManager() != null) {
+                if (getSupportFragmentManager() != null) {
                     citiesEditDialog.show(getSupportFragmentManager(), "");
                 }
             }
@@ -78,7 +78,7 @@ public class SettingsActivity extends AppCompatActivity implements CitiesEditDia
             @Override
             public void onClick(View view) {
                 CitiesEditDialog citiesEditDialog = new CitiesEditDialog(SettingsActivity.this,ADD_CITY, null);
-                if (getFragmentManager() != null) {
+                if (getSupportFragmentManager() != null) {
                     citiesEditDialog.show(getSupportFragmentManager(), "");
                 }
             }
